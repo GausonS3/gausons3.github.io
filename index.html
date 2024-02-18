@@ -3,7 +3,7 @@
 <head>
     <link type="text/css" rel="stylesheet" href="s3style.css">
 </head>
-<body>
+<body onload="onChange()">
 
 <div id="parent">
     <div id="wrapper">
@@ -12,7 +12,7 @@
                 <h1 class="weapon">Weapon</h1>
                 <label>
                     <input onclick="onSwordChange()" type="radio" name="weapon" value="sw" checked>
-                    <img id="swordImage" src="img/sword_disabled.png" alt="Option 1">
+                    <img id="swordImage" src="img/sword_active.png" alt="Option 1">
                 </label>
 
                 <label>
@@ -32,7 +32,7 @@
                     <h1>Level</h1>
                     <label>
                         <input onclick="onLevel1Change()" type="radio" name="level" value="1" checked>
-                        <img id="lvl1Image" src="img/lvl1_disabled.png" alt="Option 1">
+                        <img id="lvl1Image" src="img/lvl1_active.png" alt="Option 1">
                     </label>
                     <label>
                         <input onclick="onLevel2Change()" type="radio" name="level" value="2">
@@ -51,7 +51,7 @@
                     <h1>Number Of Players</h1>
                     <label>
                         <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="0">
+                        <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="10">
                         <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
                     </label>
                 </div>
@@ -61,9 +61,12 @@
             <table class="styled-table" id="tableContent">
                 <thead>
                 <tr>
-                    <th>Damage</th>
-                    <th>Combat Power</th>
-                    <th>Gold Bars</th>
+                    <th><img id="dmg" src="img/swords.png" alt="swords">
+                    <label>Damage</label></th>
+                    <th><img id="cp" src="img/hit.png" alt="hit">
+                    <label>Combat Power</label></th>
+                    <th><img id="gb" src="img/gold-ingots.png" alt="gold-ingots">
+                    <label>Required Gold Bars</label></th>
                 </tr>
                 </thead>
             </table>

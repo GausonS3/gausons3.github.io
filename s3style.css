@@ -9,7 +9,7 @@ html {
      background-repeat: no-repeat;
      background-size: cover;
 }
- img {
+img {
      width: 100px;
      height: 100px;
      border-radius: 20px;
@@ -76,18 +76,30 @@ html {
  .styled-table {
      border-collapse: collapse;
      margin: 25px 0;
-     font-size: 0.9em;
+     font-size: 1em;
      font-family: sans-serif;
      min-width: 400px;
+     text-align: center;
      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+     background-color: rgba(255, 255, 255, 0.8);
 }
  .styled-table thead tr {
      background-color: #4CBB17;
      color: #ffffff;
-     text-align: left;
+     text-align: center;
 }
  .styled-table th, .styled-table td {
      padding: 12px 15px;
+     align-items: center;
+}
+th img {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+th label {
+    position:relative;
+    bottom: 10px
 }
 /* form css */
 form {

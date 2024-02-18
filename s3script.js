@@ -6,22 +6,25 @@ function loadTableData(weapon, level, numberOfPlayers) {
             console.log("Starting gold for " + numberOfPlayers + " players:", startingGold);
 
 
-            //    var fileName = "data/" + weapon + level + ".json";
-            //    fetch(fileName)
-            //        .then(response => response.json())
-            //        .then(json => {
-            //                var table = document.getElementById('tableContent');
-            //                for (var i = 0; i < json.length; i++) {
-            //                    var tr = "<tr>";
-            //                    tr += "<td>" + json[i].dmg + "</td>";
-            //                    tr += "<td>" + json[i].cp + "</td>";
-            //                    tr += "<td>" + json[i].gold + "</td>";
-            //                    tr += "</tr>";
-            //
-            //                    table.innerHTML += tr;
-            //                }
-            //            }
-            //        );
+                var fileName = "data/" + weapon + level + ".json";
+                fetch(fileName)
+                    .then(response => response.json())
+                    .then(json => {
+                            var table = document.getElementById('tableContent');
+                            for (var i = 0; i < json.length; i++) {
+                                var gold = json[i].gold - startingGold;
+                                if (gold >= 0) {
+                                    var tr = "<tr>";
+                                    tr += "<td>" + json[i].dmg + "</td>";
+                                    tr += "<td>" + (json[i].cp * 100).toFixed(0) + "%" + "</td>";
+                                    tr += "<td>" + gold + "</td>";
+                                    tr += "</tr>";
+
+                                    table.innerHTML += tr;
+                                }
+                            }
+                        }
+                    );
 
 
         })
@@ -119,6 +122,14 @@ function onLevel3Change() {
 }
 
 function onNumberOfPlayersChange() {
-    //TODO validation
+    var inputElement = document.getElementById('numberOfPlayers');
+    var value = parseInt(inputElement.value);
+
+    // Validate the input value
+    if (isNaN(value) || value < 1) {
+        inputElement.value = 1;
+    } else if (value > 20) {
+        inputElement.value = 20;
+    }
     onChange();
 }

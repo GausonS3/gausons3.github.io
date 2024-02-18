@@ -1,22 +1,30 @@
-function loadTableData(weapon, level) {
+function loadTableData(weapon, level, numberOfPlayers) {
     clearTable();
 
-    var fileName = weapon + level + ".json";
-    fetch(fileName)
-        .then(response => response.json())
-        .then(json => {
-                var table = document.getElementById('tableContent');
-                for (var i = 0; i < json.length; i++) {
-                    var tr = "<tr>";
-                    tr += "<td>" + json[i].dmg + "</td>";
-                    tr += "<td>" + json[i].cp + "</td>";
-                    tr += "<td>" + json[i].gold + "</td>";
-                    tr += "</tr>";
+    getStartingGoldBars(numberOfPlayers)
+        .then(startingGold => {
+            console.log("Starting gold for " + numberOfPlayers + " players:", startingGold);
 
-                    table.innerHTML += tr;
-                }
-            }
-        );
+
+            //    var fileName = "data/" + weapon + level + ".json";
+            //    fetch(fileName)
+            //        .then(response => response.json())
+            //        .then(json => {
+            //                var table = document.getElementById('tableContent');
+            //                for (var i = 0; i < json.length; i++) {
+            //                    var tr = "<tr>";
+            //                    tr += "<td>" + json[i].dmg + "</td>";
+            //                    tr += "<td>" + json[i].cp + "</td>";
+            //                    tr += "<td>" + json[i].gold + "</td>";
+            //                    tr += "</tr>";
+            //
+            //                    table.innerHTML += tr;
+            //                }
+            //            }
+            //        );
+
+
+        })
 }
 
 function clearTable() {
@@ -28,10 +36,10 @@ function clearTable() {
     }
 }
 
-function onRadioChange() {
-
-
-    loadTableData(document.querySelector('input[name="weapon"]:checked').value, document.querySelector('input[name="level"]:checked').value, document.querySelector('input[name="level"]').value);
+function onChange() {
+    loadTableData(document.querySelector('input[name="weapon"]:checked').value,
+                  document.querySelector('input[name="level"]:checked').value,
+                  document.getElementById('numberOfPlayers').value);
 }
 
 function increaseValue() {
@@ -49,27 +57,68 @@ function decreaseValue() {
   document.getElementById('numberOfPlayers').value = value;
 }
 
-function getGoldBars(numberOfPlayers, gold) {
-
+function getStartingGoldBars(numberOfPlayers) {
+    var fileName = "data/startingGold.json";
+    return fetch(fileName)
+        .then(response => response.json())
+        .then(json => {
+            console.log(json);
+            for (var i = 0; i < json.length; i++) {
+                if (numberOfPlayers == json[i].numPlayers) {
+                    return json[i].gold;
+                }
+            }
+            return null;
+        })
+        .catch(error => {
+            console.error('Error fetching starting gold:', error);
+            throw error;
+        });
 }
 
 function onSwordChange() {
-    var weaponImage = document.getElementById('swordImage').src = "img/sword_active.png";
-    var weaponImage = document.getElementById('bowImage').src = "img/bow_disabled.png";
-    var weaponImage = document.getElementById('spearImage').src = "img/spear_disabled.png";
-    onRadioChange();
+    document.getElementById('swordImage').src = "img/sword_active.png";
+    document.getElementById('bowImage').src = "img/bow_disabled.png";
+    document.getElementById('spearImage').src = "img/spear_disabled.png";
+    onChange();
 }
 
 function onBowChange() {
-    var weaponImage = document.getElementById('swordImage').src = "img/sword_disabled.png";
-    var weaponImage = document.getElementById('bowImage').src = "img/bow_active.png";
-    var weaponImage = document.getElementById('spearImage').src = "img/spear_disabled.png";
-    onRadioChange();
+    document.getElementById('swordImage').src = "img/sword_disabled.png";
+    document.getElementById('bowImage').src = "img/bow_active.png";
+    document.getElementById('spearImage').src = "img/spear_disabled.png";
+    onChange();
 }
 
 function onSpearChange() {
-    var weaponImage = document.getElementById('swordImage').src = "img/sword_disabled.png";
-    var weaponImage = document.getElementById('bowImage').src = "img/bow_disabled.png";
-    var weaponImage = document.getElementById('spearImage').src = "img/spear_active.png";
-    onRadioChange();
+    document.getElementById('swordImage').src = "img/sword_disabled.png";
+    document.getElementById('bowImage').src = "img/bow_disabled.png";
+    document.getElementById('spearImage').src = "img/spear_active.png";
+    onChange();
+}
+
+function onLevel1Change() {
+    document.getElementById('lvl1Image').src = "img/lvl1_active.png";
+    document.getElementById('lvl2Image').src = "img/lvl2_disabled.png";
+    document.getElementById('lvl3Image').src = "img/lvl3_disabled.png";
+    onChange();
+}
+
+function onLevel2Change() {
+    document.getElementById('lvl1Image').src = "img/lvl1_disabled.png";
+    document.getElementById('lvl2Image').src = "img/lvl2_active.png";
+    document.getElementById('lvl3Image').src = "img/lvl3_disabled.png";
+    onChange();
+}
+
+function onLevel3Change() {
+    document.getElementById('lvl1Image').src = "img/lvl1_disabled.png";
+    document.getElementById('lvl2Image').src = "img/lvl2_disabled.png";
+    document.getElementById('lvl3Image').src = "img/lvl3_active.png";
+    onChange();
+}
+
+function onNumberOfPlayersChange() {
+    //TODO validation
+    onChange();
 }

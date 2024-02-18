@@ -1,0 +1,102 @@
+[
+  {
+    "numPlayers": 20,
+    "cp": 0.12,
+    "gold": 0
+  },
+  {
+    "numPlayers": 19,
+    "cp": 0.12,
+    "gold": 0
+  },
+  {
+    "numPlayers": 18,
+    "cp": 0.13,
+    "gold": 1
+  },
+  {
+    "numPlayers": 17,
+    "cp": 0.14,
+    "gold": 2
+  },
+  {
+    "numPlayers": 16,
+    "cp": 0.14,
+    "gold": 3
+  },
+  {
+    "numPlayers": 15,
+    "cp": 0.15,
+    "gold": 4
+  },
+  {
+    "numPlayers": 14,
+    "cp": 0.16,
+    "gold": 5
+  },
+  {
+    "numPlayers": 13,
+    "cp": 0.17,
+    "gold": 6
+  },
+  {
+    "numPlayers": 12,
+    "cp": 0.18,
+    "gold": 8
+  },
+  {
+    "numPlayers": 11,
+    "cp": 0.19,
+    "gold": 9
+  },
+  {
+    "numPlayers": 10,
+    "cp": 0.21,
+    "gold": 11
+  },
+  {
+    "numPlayers": 9,
+    "cp": 0.23,
+    "gold": 13
+  },
+  {
+    "numPlayers": 8,
+    "cp": 0.25,
+    "gold": 16
+  },
+  {
+    "numPlayers": 7,
+    "cp": 0.26,
+    "gold": 18
+  },
+  {
+    "numPlayers": 6,
+    "cp": 0.29,
+    "gold": 22
+  },
+  {
+    "numPlayers": 5,
+    "cp": 0.33,
+    "gold": 26
+  },
+  {
+    "numPlayers": 4,
+    "cp": 0.37,
+    "gold": 32
+  },
+  {
+    "numPlayers": 3,
+    "cp": 0.42,
+    "gold": 38
+  },
+  {
+    "numPlayers": 2,
+    "cp": 0.5,
+    "gold": 48
+  },
+  {
+    "numPlayers": 1,
+    "cp": 0.54,
+    "gold": 60
+  }
+]

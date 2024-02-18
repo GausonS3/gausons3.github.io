@@ -31,16 +31,16 @@
                 <div>
                     <h1>Level</h1>
                     <label>
-                        <input onclick="onRadioChange()" type="radio" name="level" value="1" checked>
-                        <img src="img/sword_disabled.png" alt="Option 1">
+                        <input onclick="onLevel1Change()" type="radio" name="level" value="1" checked>
+                        <img id="lvl1Image" src="img/lvl1_disabled.png" alt="Option 1">
                     </label>
                     <label>
-                        <input onclick="onRadioChange()" type="radio" name="level" value="2">
-                        <img src="img/sword_disabled.png" alt="Option 2">
+                        <input onclick="onLevel2Change()" type="radio" name="level" value="2">
+                        <img id="lvl2Image" src="img/lvl2_disabled.png" alt="Option 2">
                     </label>
                     <label>
-                        <input onclick="onRadioChange()" type="radio" name="level" value="3">
-                        <img src="img/sword_disabled.png" alt="Option 3">
+                        <input onclick="onLevel3Change()" type="radio" name="level" value="3">
+                        <img id="lvl3Image" src="img/lvl3_disabled.png" alt="Option 3">
                     </label>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <h1>Number Of Players</h1>
                     <label>
                         <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input type="number" id="numberOfPlayers" value="0">
+                        <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="0">
                         <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
                     </label>
                 </div>

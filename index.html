@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link type="text/css" rel="stylesheet" href="s3style.css">
 </head>
+
 <body>
 
-<div id="parent">
-    <div id="wrapper">
-        <div id="left">
-            <div>
-                <h1 class="weapon">Weapon</h1>
-                <label>
-                    <input onclick="onSwordChange()" type="radio" name="weapon" value="sw" checked>
-                    <img id="swordImage" src="img/sword_disabled.png" alt="Option 1">
-                </label>
-
-                <label>
-                    <input onclick="onBowChange()" type="radio" name="weapon" value="b">
-                    <img id="bowImage" src="img/bow_disabled.png" alt="Option 2">
-                </label>
-
-                <label>
-                    <input onclick="onSpearChange()" type="radio" name="weapon" value="sp">
-                    <img id="spearImage" src="img/spear_disabled.png" alt="Option 3">
-                </label>
-            </div>
-        </div>
-        <div id="center">
-            <div class='level'>
+    <div id="parent">
+        <div id="wrapper">
+            <div id="left">
                 <div>
-                    <h1>Level</h1>
+                    <h1 class="weapon">Weapon</h1>
                     <label>
-                        <input onclick="onLevel1Change()" type="radio" name="level" value="1" checked>
-                        <img id="lvl1Image" src="img/lvl1_disabled.png" alt="Option 1">
+                        <input onclick="onSwordChange()" type="radio" name="weapon" value="sw" checked>
+                        <img class="one" id="swordImage" src="img/sword_disabled.png" alt="Option 1">
                     </label>
+
                     <label>
-                        <input onclick="onLevel2Change()" type="radio" name="level" value="2">
-                        <img id="lvl2Image" src="img/lvl2_disabled.png" alt="Option 2">
+                        <input onclick="onBowChange()" type="radio" name="weapon" value="b">
+                        <img class="one" id="bowImage" src="img/bow_disabled.png" alt="Option 2">
                     </label>
+
                     <label>
-                        <input onclick="onLevel3Change()" type="radio" name="level" value="3">
-                        <img id="lvl3Image" src="img/lvl3_disabled.png" alt="Option 3">
+                        <input onclick="onSpearChange()" type="radio" name="weapon" value="sp">
+                        <img class="one" id="spearImage" src="img/spear_disabled.png" alt="Option 3">
                     </label>
                 </div>
             </div>
-        </div>
-        <div id="right">
-            <div class='numberOfPlayers'>
-                <div>
-                    <h1>Number Of Players</h1>
-                    <label>
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                        <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="0">
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                    </label>
+            <div id="center">
+                <div class='level'>
+                    <div>
+                        <h1>Level</h1>
+                        <label>
+                            <input onclick="onLevel1Change()" type="radio" name="level" value="1" checked>
+                            <img class="one" id="lvl1Image" src="img/lvl1_disabled.png" alt="Option 1">
+                        </label>
+                        <label>
+                            <input onclick="onLevel2Change()" type="radio" name="level" value="2">
+                            <img class="one" id="lvl2Image" src="img/lvl2_disabled.png" alt="Option 2">
+                        </label>
+                        <label>
+                            <input onclick="onLevel3Change()" type="radio" name="level" value="3">
+                            <img class="one" id="lvl3Image" src="img/lvl3_disabled.png" alt="Option 3">
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="table">
-            <table class="styled-table" id="tableContent">
-                <thead>
-                <tr>
-                    <th>Damage</th>
-                    <th>Combat Power</th>
-                    <th>Gold Bars</th>
-                </tr>
-                </thead>
-            </table>
+            <div id="right">
+                <div class='numberOfPlayers'>
+                    <div>
+                        <h1>Number Of Players</h1>
+                        <label>
+                            <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
+                            </div>
+                            <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="0">
+                            <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="table">
+                <table class="styled-table" id="tableContent">
+                    <thead>
+                        <tr>
+                            <th>Damage</th>
+                            <th>Combat Power</th>
+                            <th>Gold Bars</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
-</div>
-<script src="s3script.js"></script>
+    <script src="s3script.js"></script>
 </body>
+
 </html>

@@ -3,6 +3,9 @@
 
 <head>
     <link type="text/css" rel="stylesheet" href="s3style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
 </head>
 
 <body onload="onChange()">
@@ -51,31 +54,32 @@
                 <div class='numberOfPlayers'>
                     <div>
                         <h1>Number Of Players</h1>
-                        <label>
-                            <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
-                            </div>
-                            <input onclick="onNumberOfPlayersChange()" type="number" id="numberOfPlayers" value="10">
-                            <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
-                            </div>
-                        </label>
+                        <input type="range" id="numberOfPlayers" value="10" min="1" max="20" oninput="onNumberOfPlayersChange()" class="custom-range">
+                        <output id="numberOfPlayersOutput">10</output>
                     </div>
                 </div>
             </div>
             <div id="table">
-                <table class="styled-table" id="tableContent">
+                <table class="styled-table" >
                     <thead>
                         <tr>
-                            <th><img id="dmg" src="img/swords.png" alt="swords">
+                            <th><img id="dmg" src="img/hit.png" alt="swords">
                                 <label>Damage</label>
+<!--                                <br/>-->
+                                <label id="vss">(vs spears)</label>
                             </th>
-                            <th><img id="cp" src="img/hit.png" alt="hit">
+                            <th><img id="cp" src="img/swords.png" alt="hit">
                                 <label>Combat Power</label>
                             </th>
                             <th><img id="gb" src="img/gold-ingots.png" alt="gold-ingots">
                                 <label>Required Gold Bars</label>
                             </th>
+<!--                            <th><img id="vs" src="img/gold-ingots.png" alt="vs-spear">-->
+<!--                                <label>Damage vs spears</label>-->
+<!--                            </th>-->
                         </tr>
                     </thead>
+                    <tbody id="tableContent"></tbody>
                 </table>
             </div>
         </div>

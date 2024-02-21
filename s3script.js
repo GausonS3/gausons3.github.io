@@ -1,6 +1,4 @@
 function loadTableData(weapon, level, numberOfPlayers) {
-    clearTable();
-
     getStartingGoldBars(numberOfPlayers)
         .then(startingGold => {
             console.log("Starting gold for " + numberOfPlayers + " players:", startingGold);
@@ -10,12 +8,13 @@ function loadTableData(weapon, level, numberOfPlayers) {
                 fetch(fileName)
                     .then(response => response.json())
                     .then(json => {
+                            clearTable();
                             var table = document.getElementById('tableContent');
                             for (var i = 0; i < json.length; i++) {
                                 var gold = json[i].gold - startingGold;
                                 if (gold >= 0) {
                                     var tr = "<tr>";
-                                    tr += "<td>" + json[i].dmg + "</td>";
+                                    tr += "<td>" + json[i].dmg + "<label id='vss'>" + "(" + Math.floor(json[i].dmg / 2) + ")" + "</label>" + "</td>";
                                     tr += "<td>" + (json[i].cp * 100).toFixed(0) + "%" + "</td>";
                                     tr += "<td>" + gold + "</td>";
                                     tr += "</tr>";
@@ -43,21 +42,6 @@ function onChange() {
     loadTableData(document.querySelector('input[name="weapon"]:checked').value,
                   document.querySelector('input[name="level"]:checked').value,
                   document.getElementById('numberOfPlayers').value);
-}
-
-function increaseValue() {
-  var value = parseInt(document.getElementById('numberOfPlayers').value, 10);
-  value = isNaN(value) ? 0 : value;
-  value++;
-  document.getElementById('numberOfPlayers').value = value;
-}
-
-function decreaseValue() {
-  var value = parseInt(document.getElementById('numberOfPlayers').value, 10);
-  value = isNaN(value) ? 0 : value;
-  value < 1 ? value = 1 : '';
-  value--;
-  document.getElementById('numberOfPlayers').value = value;
 }
 
 function getStartingGoldBars(numberOfPlayers) {
@@ -122,14 +106,7 @@ function onLevel3Change() {
 }
 
 function onNumberOfPlayersChange() {
-    var inputElement = document.getElementById('numberOfPlayers');
-    var value = parseInt(inputElement.value);
-
-    // Validate the input value
-    if (isNaN(value) || value < 1) {
-        inputElement.value = 1;
-    } else if (value > 20) {
-        inputElement.value = 20;
-    }
+    document.getElementById('numberOfPlayersOutput').value = document.getElementById('numberOfPlayers').value;
     onChange();
 }
+

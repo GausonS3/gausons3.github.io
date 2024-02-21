@@ -6,7 +6,6 @@ body {
 	min-height: 100%;
 	/* Center and scale the image nicely */
 	background-position: center;
-	background-repeat: no-repeat;
 	background-size: cover;
 }
 img {
@@ -26,8 +25,8 @@ img {
 	cursor: pointer;
 }
 h1 {
-	font-family: 'Bitter', serif;
-	font-size: 40px;
+	font-family: "Protest Riot", sans-serif;
+	font-size: 50px;
 	font-weight: normal;
 	line-height: 54px;
 	text-align: center;
@@ -40,7 +39,7 @@ h1 {
 	flex: 1;
 	display: flex;
 	flex-flow: row wrap;
-	margin: 0 10% 50px 10%;
+	margin: 0 15% 50px 15%;
 	align-content: flex-start;
 	/* Add this*/
 }
@@ -67,21 +66,25 @@ h1 {
 }
 #right {
 	flex: 1;
-	margin: 0 0 50px 0;
+	margin: 0 0 25px 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.custom-range {
+    width: 300px; /* Adjust the width as needed */
+    margin: 40px 0 0 40px;
 }
 /* table css */
 .styled-table {
 	border-collapse: collapse;
 	margin: 25px 0;
-	font-size: 1em;
+	font-size: 1.5em;
 	font-family: sans-serif;
 	min-width: 400px;
 	text-align: center;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.95);
 }
 .styled-table thead tr {
 	background-color: #4cbb17;
@@ -101,6 +104,13 @@ th img {
 th label {
 	position: relative;
 	bottom: 10px;
+}
+.styled-table tbody tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#vss {
+	position: relative;
+	font-size: 0.6em;
 }
 /* form css */
 form {
@@ -131,50 +141,6 @@ form {
 .value-button:hover {
 	cursor: pointer;
 }
-
-form #decrease {
-	margin-right: -4px;
-	border-radius: 8px 0 0 8px;
-}
-
-form #increase {
-	margin-left: -4px;
-	border-radius: 0 8px 8px 0;
-}
-
-form #input-wrap {
-	margin: 0px;
-	padding: 0px;
-}
-
-input#number {
-	text-align: center;
-	border: none;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	margin: 0px;
-	width: 40px;
-	height: 40px;
-}
-
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-/* Firefox */
-input[type='number'] {
-	-moz-appearance: textfield;
-}
-
 .one:active {
 	scale: 0.9;
 }

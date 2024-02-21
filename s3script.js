@@ -144,5 +144,3 @@ function onPageLoad() {
 	document.getElementById('lvl1Image').classList.add('active')
 	onChange()
 }
-
-onPageLoad()

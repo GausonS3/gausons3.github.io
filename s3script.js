@@ -27,7 +27,7 @@ function loadTableData(weapon, level, numberOfPlayers) {
 
 function clearTable() {
 	var table = document.getElementById('tableContent')
-	var tableHeaderRowCount = 1
+	var tableHeaderRowCount = 0;
 	var rowCount = table.rows.length
 	for (var i = tableHeaderRowCount; i < rowCount; i++) {
 		table.deleteRow(tableHeaderRowCount)

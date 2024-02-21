@@ -103,7 +103,7 @@ th img {
 }
 th label {
 	position: relative;
-	bottom: 10px;
+	bottom: 5px;
 }
 .styled-table tbody tr:nth-child(even) {
     background-color: #dddddd;

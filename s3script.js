@@ -27,7 +27,7 @@ function loadTableData(weapon, level, numberOfPlayers) {
 
 function clearTable() {
 	var table = document.getElementById('tableContent')
-	var tableHeaderRowCount = 0;
+	var tableHeaderRowCount = 0
 	var rowCount = table.rows.length
 	for (var i = tableHeaderRowCount; i < rowCount; i++) {
 		table.deleteRow(tableHeaderRowCount)
@@ -135,4 +135,12 @@ function setActiveLevelImage(imageId) {
 
 	activeLevelImage = document.getElementById(imageId)
 	activeLevelImage.classList.add('active')
+}
+
+function onPageLoad() {
+	onSwordChange()
+	onLevel1Change()
+	document.getElementById('swordImage').classList.add('active')
+	document.getElementById('lvl1Image').classList.add('active')
+	onChange()
 }

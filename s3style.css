@@ -119,7 +119,7 @@ th label {
 .styled-table tbody tr:nth-child(even) {
 	background-color: #dddddd;
 }
-#vss {
+.vss {
 	position: relative;
 	font-size: 0.6em;
 }

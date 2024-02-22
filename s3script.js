@@ -13,9 +13,9 @@ function loadTableData(weapon, level, numberOfPlayers) {
 					if (gold >= 0) {
 						var tr = '<tr>'
 						tr +=
-							'<td>' + json[i].dmg + "<label id='vss'>" + '(' + Math.floor(json[i].dmg / 2) + ')' + '</label>' + '</td>'
+							'<td>' + json[i].dmg + "<label class='vss'>" + '(' + Math.floor(json[i].dmg / 2) + ')' + "</label>" + '</td>'
 						tr += '<td>' + (json[i].cp * 100).toFixed(0) + '%' + '</td>'
-						tr += '<td>' + gold + '</td>'
+						tr += '<td>' + gold + "<label class='vss'>" + '(' + Math.ceil(gold / 2) + ')' + "</label>" + '</td>'
 						tr += '</tr>'
 
 						table.innerHTML += tr
